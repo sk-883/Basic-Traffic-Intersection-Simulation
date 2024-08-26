@@ -61,7 +61,7 @@ class Vehicle(pygame.sprite.Sprite):
         self.crossed = 0
         vehicles[direction][lane].append(self)
         self.index = len(vehicles[direction][lane]) - 1
-        path = "images/" + direction + "/" + vehicleClass + ".png"
+        path = "SIH_MIT/Basic-Traffic-Intersection-Simulation/" + direction + "/" + vehicleClass + ".png"
         self.image = pygame.image.load(path)
 
         if(len(vehicles[direction][lane])>1 and vehicles[direction][lane][self.index-1].crossed==0):    # if more than 1 vehicle in the lane of vehicle before it has crossed stop line
@@ -199,15 +199,15 @@ class Main:
     screenSize = (screenWidth, screenHeight)
 
     # Setting background image i.e. image of intersection
-    background = pygame.image.load('images/intersection.png')
+    background = pygame.image.load('intersection.png')
 
     screen = pygame.display.set_mode(screenSize)
     pygame.display.set_caption("SIMULATION")
 
     # Loading signal images and font
-    redSignal = pygame.image.load('images/signals/red.png')
-    yellowSignal = pygame.image.load('images/signals/yellow.png')
-    greenSignal = pygame.image.load('images/signals/green.png')
+    redSignal = pygame.image.load('SIH_MIT/Basic-Traffic-Intersection-Simulation/red.png')
+    yellowSignal = pygame.image.load('SIH_MIT/Basic-Traffic-Intersection-Simulation/yellow.png')
+    greenSignal = pygame.image.load('SIH_MIT/Basic-Traffic-Intersection-Simulation/green.png')
     font = pygame.font.Font(None, 30)
 
     thread2 = threading.Thread(name="generateVehicles",target=generateVehicles, args=())    # Generating vehicles
